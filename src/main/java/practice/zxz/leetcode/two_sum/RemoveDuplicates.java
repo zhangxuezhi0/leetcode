@@ -59,6 +59,7 @@ public class RemoveDuplicates {
      * @date 2019/10/23 11:46
      **/
     public static int mySolution(int[] nums) {
+        long currentTimeMillis = System.currentTimeMillis();
         //该算法计算的次数
         int counts = 0;
 
@@ -81,6 +82,7 @@ public class RemoveDuplicates {
             }
         }
         System.out.println(counts);
+        System.out.println("mySolution算法耗时：" + (System.currentTimeMillis() - currentTimeMillis));
         return len;
     }
 
@@ -103,12 +105,59 @@ public class RemoveDuplicates {
         return ints.length - 1;
     }
 
+    /**
+     * 官方题解：双指针法
+     * <p>
+     * 数组完成排序后，我们可以放置两个指针i 和j，其中i 是慢指针，而j 是快指针。只要 nums[i] = nums[j]，我们就增加 j 以跳过重复项。
+     * 当我们遇到 nums[j] != nums[i]，跳过重复项的运行已经结束，因此我们必须把它（nums[j]）的值复制到 nums[i + 1]。然后递增 i，接着我们将再次重复相同的过程，直到 j 到达数组的末尾为止。
+     * <p>
+     * 复杂度分析
+     * 时间复杂度：O(n)，假设数组的长度是 n，那么 i 和 j 分别最多遍历 n 步。
+     * 空间复杂度：O(1)
+     * <p>
+     * 作者：LeetCode
+     * 链接：https://leetcode-cn.com/problems/remove-duplicates-from-sorted-array/solution/shan-chu-pai-xu-shu-zu-zhong-de-zhong-fu-xiang-by-/
+     * 来源：力扣（LeetCode）
+     * 著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
+     *
+     * @param nums 目标数组
+     * @return int
+     * @author Zxz
+     * @date 2019/10/23 19:21
+     **/
+    public static int removeDuplicates(int[] nums) {
+        long currentTimeMillis = System.currentTimeMillis();
+        if (nums.length == 0) return 0;
+        int i = 0;
+        for (int j = 1; j < nums.length; j++) {
+            if (nums[j] != nums[i]) {
+                i++;
+                nums[i] = nums[j];
+            }
+        }
+        System.out.println("removeDuplicates算法耗时：" + (System.currentTimeMillis() - currentTimeMillis));
+        return i + 1;
+    }
+
+
     public static void main(String[] args) {
-        int[] ints = {1, 2, 3, 3, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 5, 6, 7, 8, 8, 8, 9, 10, 11};
+//        int[] ints = {1, 2, 3, 3, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 5, 6, 7, 8, 8, 8, 9, 10, 11};
+        int counts = 200000;
+        int[] ints = new int[counts];
+        for (int i = 0; i < counts; i++) {
+            ints[i] = 1234567890;
+        }
+
         int i = mySolution(ints);
+//        int i = removeDuplicates(ints);
         for (int j = 0; j < i; j++) {
             System.out.println(ints[j]);
         }
+        /*int i = removeDuplicates(ints);
+        for (int j = 0; j < i; j++) {
+            System.out.println(ints[j]);
+        }*/
+
     }
 
 }
