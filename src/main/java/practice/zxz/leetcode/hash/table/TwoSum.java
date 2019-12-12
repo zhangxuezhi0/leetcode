@@ -1,4 +1,4 @@
-package practice.zxz.leetcode.two_sum;
+package practice.zxz.leetcode.hash.table;
 
 import first.zxz.tools.PrintTool;
 
@@ -12,41 +12,14 @@ import java.util.HashMap;
  * 你可以假设每种输入只会对应一个答案。但是，你不能重复利用这个数组中同样的元素。
  *
  * @author zhangxz
- * 2019/9/29
+ *         2019/9/29
  */
 public class TwoSum {
 
     public static void main(String[] args) {
-        int[] ints = new int[]{1, 3, 5, 6, 2, 8, 10, 99, 7, 23};
-        int target1 = 3;
-        int target2 = 30;
-        int target3 = 180;
-        int target4 = 10;
-        int target5 = 1000;
-
-        System.out.println("*** method1 start ***");
-        PrintTool.printIntArr(method1(ints, target1));
-        PrintTool.printIntArr(method1(ints, target2));
-        PrintTool.printIntArr(method1(ints, target3));
-        PrintTool.printIntArr(method1(ints, target4));
-        PrintTool.printIntArr(method1(ints, target5));
-        System.out.println("*** method1 end ***");
-
-        System.out.println("*** method2 start ***");
-        PrintTool.printIntArr(method2(ints, target1));
-        PrintTool.printIntArr(method2(ints, target2));
-        PrintTool.printIntArr(method2(ints, target3));
-        PrintTool.printIntArr(method2(ints, target4));
-        PrintTool.printIntArr(method2(ints, target5));
-        System.out.println("*** method2 end ***");
-
-        System.out.println("*** method3 start ***");
-        PrintTool.printIntArr(method3(ints, target1));
-        PrintTool.printIntArr(method3(ints, target2));
-        PrintTool.printIntArr(method3(ints, target3));
-        PrintTool.printIntArr(method3(ints, target4));
-        PrintTool.printIntArr(method3(ints, target5));
-        System.out.println("*** method3 end ***");
+        int[] ints = new int[]{1, 3, 6, 5, 6, 2, 8, 10, 99, 7, 23};
+        int target = 12;
+        PrintTool.printIntArr(method3(ints, target));
     }
 
     /**

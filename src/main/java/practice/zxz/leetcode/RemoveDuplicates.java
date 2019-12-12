@@ -1,4 +1,4 @@
-package practice.zxz.leetcode.two_sum;
+package practice.zxz.leetcode;
 
 /**
  * 给定一个排序数组，你需要在原地删除重复出现的元素，使得每个元素只出现一次，返回移除后数组的新长度。
@@ -75,7 +75,7 @@ public class RemoveDuplicates {
 
                 counts++;
 
-                //注意这里要加上这个跳出循环的条件，否则当最后一项和倒数第2项相等时，会陷入死循环
+                //注意这里要加上这个跳出循环的条件，否则当最后两个数值相等时，会陷入死循环
                 if (j > len - 1) {
                     break;
                 }

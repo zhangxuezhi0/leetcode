@@ -1,5 +1,5 @@
 
-package practice.zxz.leetcode.two_sum;
+package practice.zxz.leetcode;
 
 /**
  * 将两个有序链表合并为一个新的有序链表并返回。新链表是通过拼接给定的两个链表的所有节点组成的。 
@@ -89,7 +89,7 @@ public class MergeTwoLists {
      *
      * @param l1
      * @param l2
-     * @return practice.zxz.leetcode.two_sum.ListNode
+     * @return ListNode
      * @author Zxz
      * @date 2019/10/12 10:44
      **/
@@ -107,13 +107,6 @@ public class MergeTwoLists {
         }
 
     }
-
-    /**
-     作者：LeetCode
-     链接：https://leetcode-cn.com/problems/merge-two-sorted-lists/solution/he-bing-liang-ge-you-xu-lian-biao-by-leetcode/
-     来源：力扣（LeetCode）
-     著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
-     */
 
 }
 
