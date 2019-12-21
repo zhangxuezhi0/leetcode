@@ -50,7 +50,7 @@ public class CountPrimes {
 
         boolean[] isPrime = new boolean[n];
         Arrays.fill(isPrime, true);
-        //优化点： 这里的遍历边界是可以n的一半，而不需要遍历到n
+        //优化点： 这里的遍历边界可以是n的一半，而不需要遍历到n
         for (int i = 2; i < n / 2; i++) {
             if (isPrime[i]) {
                 primes[primesIndex++] = i;
@@ -119,10 +119,10 @@ public class CountPrimes {
         for (int i = 3; i < n; i++) {
             //遍历list，判定i是否素数
 
-            //如果list中有任何一个数可以整除i，或者遍历到的list的元素数值大于i的平方根，则i为合数；
+            //如果list中没有数可以整除i，或者遍历到的list的元素数值大于i的平方根，则i为素数；
             // -这里第二个条件，遍历到达i的平方根还不能整除的话，可以判定为素数，
             // -是因为合数的因子是以其平方根为中心，分布在其两边的。
-            //否则为素数。因为说到底合数都是素数相乘得到的
+            //否则为合数。因为说到底合数都是素数相乘得到的
             for (int j = 0; j < list.size(); j++) {
                 Integer integer = list.get(j);
                 if (i % integer == 0) {
