@@ -74,6 +74,7 @@ public class LastStoneWeight {
     }
 
     //使用大顶堆
+    //时间复杂度：O(logn)
     int mySolution1() {
         if (stones == null || stones.length <= 0) {
             return 0;
