@@ -1,5 +1,5 @@
 
-package practice.zxz.leetcode;
+package practice.zxz.leetcode.linked.list;
 
 /**
  * 将两个有序链表合并为一个新的有序链表并返回。新链表是通过拼接给定的两个链表的所有节点组成的。 
@@ -10,9 +10,10 @@ package practice.zxz.leetcode;
  * 输出：1->1->2->3->4->4
  *
  * @author zhangxz
- * 2019/10/11
+ *         2019/10/11
  */
 public class MergeTwoLists {
+
 
     public static void main(String[] args) {
 
